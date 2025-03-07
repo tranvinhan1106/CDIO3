@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://kit.fontawesome.com/d941d2b0a5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="TrangChu.css">
+    <link rel="stylesheet" href="HF.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=patient_list" />
+    <title>Trang chủ</title>
+</head>
+
+<body>
+    <div>
+        <header>
+            <div class="container">
+                <div class="logo">
+                    <img src="trangchu.jpg" alt="Lỗi" class="logo">
+                </div>
+                <nav>
+                    <ul>
+                        <li class="active"><a href="#"><i class="bi bi-shop"></i> Trang chủ</a></li>
+                        <li><a href="#"><i class="bi bi-file-lock"></i> Thông tin cá nhân</a></li>
+                        <li><a href="#"><i class="bi bi-inboxes"></i> Tủ sách cá nhân</a></li>
+                        <li><a href="#"><i class="bi bi-stars"></i> Gói ưu đãi</a></li>
+                        <li><a href="#"><i class="bi bi-cart2"></i> Giỏ sách</a></li>
+                        <li><a href="#"><i class="bi bi-box-arrow-right"></i> Đăng xuất</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <hr>
+        </header>
+        <div class="imgHome">
+            <p>Hành trình tri thức bắt đầu từ việc đọc sách</p>
+            <img src="nenTrangChu.jpg" alt="Chưa có">
+        </div>
+        <hr id="hr-header">
+        <div class="second">
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-grid-fill"></i> Danh Mục
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <li><a class="dropdown-item" href="#">Thể loại</a></li>
+                    <li><a class="dropdown-item" href="#">Tác giả</a></li>
+                </ul>
+            </div>
+            <div class="search">
+                <form class="d-flex" role="search">
+                    <input class="form-control" type="search" placeholder="Tìm kiếm ..." aria-label="Search">
+                    <button><i class="bi bi-search"></i></button>
+                </form>
+            </div>
+        </div>
+        <div>
+            <div class="lineHr">
+                <h5>Thiên Đường Tri Thức</h5>
+                <hr />
+                <br />
+            </div>
+          
+                <div class="book-container">
+                    <div class="grid-container">
+                        <!-- Sách 1 -->
+                        <div class="card">
+                            <img src="./img/Meo.jpg" class="card-img-top" alt="Có hai con mèo ngồi bên cửa sổ">
+                            <div class="card-body">
+                                <h6 class="card-title">Có Hai Con Mèo Ngồi Bên Cửa Sổ</h6>
+                                <p class="text-muted">Nguyễn Nhật Ánh</p>
+                                <p class="text-warning">★★★★★ <span class="inter">|Đã thuê : 2200</p>
+                                <p class="fw-bold text-danger">30.000₫ <i class="bi bi-heart"></i>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Sách 2 -->
+                        <div class="card">
+                            <img src="./img/BayBuocToiMuaHe.jpg" class="card-img-top" alt="Bảy Bước tới mùa hè">
+                            <div class="card-body">
+                                <h6 class="card-title">Bảy Bước Tới Mùa Hè</h6>
+                                <p class="text-muted">Nguyễn Nhật Ánh</p>
+                                <p class="text-warning">★★★★★ <span class="inter">|Đã thuê : 1120</p>
+                                <p class="fw-bold text-danger">40.000₫ <i class="bi bi-heart"></i></p>
+
+                            </div>
+                        </div>
+
+                        <!-- Sách 3 -->
+                        <div class="card">
+                            <img src="./img/LamBanVoiBauTroi.jpg" class="card-img-top" alt="Làm bạn với bầu trời">
+                            <div class="card-body">
+                                <h6 class="card-title">Làm Bạn Với Bầu Trời</h6>
+                                <p class="text-muted">Nguyễn Nhật Ánh</p>
+                                <p class="text-warning">★★★★★ <span class="inter">|Đã thuê : 1320</p>
+                                <p class="fw-bold text-danger">35.000₫ <i class="bi bi-heart"></i></p>
+
+                            </div>
+                        </div>
+
+                        <!-- Sách 4 -->
+                        <div class="card">
+                            <img src="./img/ToiHocDaiHoc.jpg" class="card-img-top" alt="Tôi học Đại Học">
+                            <div class="card-body">
+                                <h6 class="card-title">Tôi Học Đại Học</h6>
+                                <p class="text-muted">Nguyễn Ngọc Ký</p>
+                                <p class="text-warning">★★★★☆<span class="inter">|Đã thuê : 1120</p>
+                                <p class="fw-bold text-danger">45.000₫ <i class="bi bi-heart"></i></p>
+
+                            </div>
+                        </div>
+
+                        <!-- Sách 5 -->
+                        <div class="card">
+                            <img src="./img/Nhà_giả_kim_(sách).jpg" class="card-img-top" alt="Nhà Giả Kim">
+                            <div class="card-body">
+                                <h6 class="card-title">Nhà Giả Kim</h6>
+                                <p class="text-muted">PauLo Coelh</p>
+                                <p class="text-warning">★★★★☆<span class="inter">|Đã thuê : 1560</p>
+                                <p class="fw-bold text-danger">59.500₫ <i class="bi bi-heart"></i></p>
+
+                            </div>
+                        </div>
+
+                        <!-- Sách 6 -->
+                        <div class="card">
+                            <img src="./img/KyUcPhienLang.jpg" class="card-img-top" alt="Ký Ức Phiên Lãng">
+                            <div class="card-body">
+                                <h6 class="card-title">Kí Ức Phiên Lãng</h6>
+                                <p class="text-muted">Tô Hoài</p>
+                                <p class="text-warning">★★★★★ <span class="inter">|Đã thuê : 900</p>
+                                <p class="fw-bold text-danger">70.000₫ <i class="bi bi-heart"></i></p>
+
+                            </div>
+                        </div>
+
+                        <!-- Sách 7 -->
+                        <div class="card">
+                            <img src="./img/ToiThayHoaVangTrenCoXanh.jpg" class="card-img-top"
+                                alt="Tôi Thấy Hoa Vàng Trên Cỏ Xanh">
+                            <div class="card-body">
+                                <h6 class="card-title">Tôi Thấy Hoa Vàng Trên Cỏ Xanh</h6>
+                                <p class="text-muted">Nguyễn Nhật Ánh</p>
+                                <p class="text-warning">★★★★☆<span class="inter">|Đã thuê : 1840</p>
+                                <p class="fw-bold text-danger">35.000₫ <i class="bi bi-heart"></i></p>
+
+                            </div>
+                        </div>
+
+                        <!-- Sách 8 -->
+                        <div class="card">
+                            <img src="./img/TuyenTapNgoTatTo.jpg" class="card-img-top" alt="Tuyển Tập Ngô Tất Tố">
+                            <div class="card-body">
+                                <h6 class="card-title">Tuyển Tập Ngô Tất Tố</h6>
+                                <p class="text-muted">Ngô Tất Tố</p>
+                                <p class="text-warning">★★★★★ <span class="inter">|Đã thuê : 932</p>
+                                <p class="fw-bold text-danger">90.000₫ <i class="bi bi-heart"></i></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="page">
+                        <ul class="pagination">
+                            <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        </ul>
+                </div>
+                <div class="text-rating">
+                    <span>Bảng xếp hạng
+                        <hr>
+                    </span>
+                </div>
+                <div class="rating">
+                    <div class="rating-button">
+                        <button class="button-select">Lượt đọc nhiều</button>
+                        <button>Đánh giá cao</button>
+                    </div>
+                    <div class="rating-book">
+                        <div class="book1">
+                            <img src="img/TuyenTapNgoTatTo.jpg" ><br>
+                            <hr>
+                            <span>2000 +</span>
+                        </div>
+                        <div class="book2">
+                            <img src="img/Meo.jpg"><br>
+                            <hr>
+                            <span>5000 +</span>
+
+                        </div>
+                        <div class="book3">
+                            <img src="img/BayBuocToiMuaHe.jpg"><br>
+                            <hr>
+                            <span>3000 +</span>
+
+                        </div>
+                    </div>
+                </div>
+            <hr>
+            <footer>
+                <div class="footer">
+                    <div class="slogan">
+                        <p style="font-size: 20px;">Tri thức là đích đến của mọi hành trình</p>
+                    </div>
+                    <hr>
+                    <div class="contact-container">
+                        <div class="contact">
+                            <p>Hotline: 0397409029</p>
+                            <p>Email: Thienduongsachdientu@gmail.com</p>
+                            <p>Địa chỉ văn phòng: 120 Hoàng Minh Thảo, Hòa Khánh Nam, Quận Liên Chiểu, Tp Đà Nẵng</p>
+                        </div>
+                        <div class="contactSecond">
+                            <p>Theo dõi chúng tôi trên các nền tảng:</p>
+                            <p><i class="bi bi-facebook"></i> Tương lai mới</p>
+                            <p><i class="bi bi-youtube"></i> Thiên đường sách điện tử</p>
+                        </div>
+                        <div class="icon">
+                            <img src="icon.jpg" alt="Không có">
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+</body>
+
+</html>
