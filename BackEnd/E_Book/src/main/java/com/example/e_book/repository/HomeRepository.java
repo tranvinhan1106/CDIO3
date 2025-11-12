@@ -16,6 +16,4 @@ import java.util.List;
 //    Page<Book> findAllBook(Pageable pageable);
     @Query(value = "select * from book" , nativeQuery = true)
     List<Book> findAllBook();
-
-
 }

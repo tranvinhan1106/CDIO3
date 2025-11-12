@@ -18,8 +18,6 @@ public class Endow {
     @Column(name = "endow_id")
     private String endowId;
     private String endowName;
-
-
     private String content;
     private Date time ;
 

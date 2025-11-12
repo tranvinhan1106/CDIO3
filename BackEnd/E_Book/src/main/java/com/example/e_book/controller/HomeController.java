@@ -31,6 +31,8 @@ public class HomeController {
     @Autowired
     private CartService cartService;
 
+
+
     //    @GetMapping("")
 //    public ResponseEntity<Page<Book>> findAll(@PageableDefault(page = 0 , size = 4)Pageable pageable){
 //        Pageable pageable1 = PageRequest.of(pageable.getPageNumber(), pageable.getPageSize());
@@ -40,7 +42,6 @@ public class HomeController {
     @GetMapping("")
     public ResponseEntity<List<Book>> findAll() {
         List<Book> list = homeService.findAllBook();
-        homeService.findAllBook();
         System.out.println("Books retrieved: " + list.size());
         return new ResponseEntity<>(list, HttpStatus.OK);
     }
@@ -53,7 +54,7 @@ public class HomeController {
 
     @GetMapping("/customer")
     public ResponseEntity<Customer> getCustomerInfo() {
-        String customerIdDefault = "C001";
+        int customerIdDefault = customerService.getCurrentAccountId() ;
         Customer customer = customerService.findCustomerById(customerIdDefault);
         System.out.println("Customer: " + customer.getCustomerName());
         return new ResponseEntity<>(customer, HttpStatus.OK);
@@ -62,8 +63,8 @@ public class HomeController {
     // Chỉnh sửa thông tin cá nhân
     @PutMapping("/customer/edit")
     public ResponseEntity<Customer> updateCustomerInfo(@RequestBody Customer customerDetails) {
-        String customerId = "C001";
-        Customer updatedCustomer = customerService.editCustomer(customerId, customerDetails);
+        int customerIdDefault = customerService.getCurrentAccountId() ;
+        Customer updatedCustomer = customerService.editCustomer(customerIdDefault, customerDetails);
         System.out.println("Sửa thành công");
         return new ResponseEntity<>(updatedCustomer, HttpStatus.OK);
     }
@@ -71,7 +72,7 @@ public class HomeController {
     //    Đổi mật khẩu
     @PutMapping("/customer/changePassword")
     public ResponseEntity<String> changePasswordCustomer(@RequestParam String oldPassword, @RequestParam String newPassword) {
-        int accountId = 1; // Lấy accountId tương ứng của khách hàng từ đối tượng `Customer` hoặc từ phiên đăng nhập
+        int accountId = customerService.getCurrentAccountId();
         boolean isPasswordChanged = customerService.changePassword(accountId, oldPassword, newPassword);
         if (isPasswordChanged) {
             return new ResponseEntity<>("Đổi mật khẩu thành công", HttpStatus.OK);

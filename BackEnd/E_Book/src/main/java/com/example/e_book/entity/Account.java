@@ -1,5 +1,6 @@
 package com.example.e_book.entity;
 
+import com.example.e_book.enums.Role;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -18,8 +19,10 @@ public class Account {
     private int accountId;
     private String userName ;
     private String password;
-    private String role ;
     @OneToOne(mappedBy = "account")
     @JsonBackReference
     private Customer customer;
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private Role role;
 }

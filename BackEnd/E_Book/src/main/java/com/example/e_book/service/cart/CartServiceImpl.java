@@ -21,7 +21,6 @@ public class CartServiceImpl implements CartService {
         int defaultCartId = 1;
         int quantity = 1;
         int total = quantity * book.getRent();
-
         cartRepository.addBookToCart(defaultCartId, book.getBookId(), quantity, total);
     }
 

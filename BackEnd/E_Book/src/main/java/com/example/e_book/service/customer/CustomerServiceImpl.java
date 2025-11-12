@@ -2,17 +2,21 @@ package com.example.e_book.service.customer;
 
 import com.example.e_book.entity.Customer;
 import com.example.e_book.repository.CustomerRepository;
+import com.example.e_book.service.account.CustomUserDetails;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 @Service
 public class CustomerServiceImpl implements CustomerService {
     @Autowired
     private CustomerRepository customerRepository;
+
     @Override
-    public Customer editCustomer(String customerId, Customer customerDetails) {
+    public Customer editCustomer(int accountId, Customer customerDetails) {
         int result = customerRepository.updateCustomerInfo(
-                customerId,
+                customerDetails.getCustomerId(),
                 customerDetails.getCustomerName(),
                 customerDetails.isGender(),
                 customerDetails.getBirthday(),
@@ -24,11 +28,11 @@ public class CustomerServiceImpl implements CustomerService {
         if (result == 0) {
             throw new RuntimeException("Failed to update customer information");
         }
-        return customerDetails;
+        return customerRepository.findCustomerById(getCurrentAccountId());
     }
     @Override
-    public Customer findCustomerById(String customerId) {
-        return customerRepository.findCustomerById(customerId);
+    public Customer findCustomerById(int accountId) {
+        return customerRepository.findCustomerById(accountId);
     }
 
     @Override
@@ -50,4 +54,13 @@ public class CustomerServiceImpl implements CustomerService {
         }
     }
 
+    @Override
+    public int getCurrentAccountId() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if (authentication != null && authentication.getPrincipal() instanceof CustomUserDetails) {
+            CustomUserDetails userDetails = (CustomUserDetails) authentication.getPrincipal();
+            return userDetails.getAccount().getAccountId();
+        }
+        throw new RuntimeException("Không tìm thấy thông tin đăng nhập");
+    }
 }

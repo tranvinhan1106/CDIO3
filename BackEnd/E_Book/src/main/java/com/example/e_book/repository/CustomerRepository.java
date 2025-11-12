@@ -18,8 +18,8 @@ public interface CustomerRepository extends JpaRepository<Customer, String> {
     @Query(value = "UPDATE customer SET customer_name = :customerName, gender = :gender, birthday = :birthday, address = :address, phone_number = :phoneNumber, email = :email WHERE customer_id = :customerId", nativeQuery = true)
     int updateCustomerInfo(@Param("customerId") String customerId, @Param("customerName") String customerName, @Param("gender") boolean gender, @Param("birthday") Date birthday, @Param("address") String address, @Param("phoneNumber") String phoneNumber, @Param("email") String email);
 
-    @Query(value = "SELECT * FROM customer WHERE customer_id = :customerId", nativeQuery = true)
-    Customer findCustomerById(@Param("customerId") String customerId);
+    @Query("SELECT c FROM Customer c WHERE c.account.accountId = :accountId")
+    Customer findCustomerById(@Param("accountId") int accountId);
 
     @Modifying
     @Transactional
